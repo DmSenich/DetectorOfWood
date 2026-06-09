@@ -1,0 +1,13 @@
+{
+  "name_wood_model": "wood_detect1.pt",
+  "name_sign_model": "sign_detect1.pt",
+  "label_photo": "name_photo",
+  "label_volume": "volume",
+  "label_count_circle": "count_circle",
+  "is_saving_result_detecting": true,
+  "is_saving_current_settings": true,
+  "avg_distance": 0,
+  "avg_length": 6.0,
+  "wood_detect_coef": 0.1,
+  "sign_detect_coef": 0.02
+}

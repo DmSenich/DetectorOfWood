@@ -78,33 +78,111 @@ class ConfigManager:
                 e_text = f"Отсутствует обязательный параметр '{key}'"
                 logger.error(e_text)
                 raise ValueError(e_text)
+        if not isinstance(merged[label_photo], str):
+            e_text = f"{label_photo} должена быть строкой. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_photo] = default_config[label_photo]
+            if not isinstance(merged[label_photo], str):
+                e_text = f"{label_photo} должена быть строкой. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
+        if not isinstance(merged[label_volume], str):
+            e_text = f"{label_volume} должена быть строкой. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_volume] = default_config[label_volume]
+            if not isinstance(merged[label_volume], str):
+                e_text = f"{label_volume} должена быть строкой. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
+        if not isinstance(merged[label_count_circle], str):
+            e_text = f"{label_count_circle} должена быть строкой. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_count_circle] = default_config[label_count_circle]
+            if not isinstance(merged[label_count_circle], str):
+                e_text = f"{label_count_circle} должена быть строкой. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
         if not isinstance(merged[label_saving_cur_settings], bool):
-            e_text = f"{label_saving_cur_settings} должен быть буллевым значением."
-            logger.error(e_text)
-            raise ValueError(e_text)
+            e_text = f"{label_saving_cur_settings} должен быть буллевым значением. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_saving_cur_settings] = default_config[label_saving_cur_settings]
+            #raise ValueError(e_text)
+            if not isinstance(merged[label_saving_cur_settings], bool):
+                e_text = f"{label_saving_cur_settings} должен быть буллевым значением. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
         if not isinstance(merged[label_saving_detecting], bool):
-            e_text = f"{label_saving_detecting} должен быть буллевым значением."
-            logger.error(e_text)
-            raise ValueError(e_text)
+            e_text = f"{label_saving_detecting} должен быть буллевым значением. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_saving_detecting] = default_config[label_saving_detecting]
+            #raise ValueError(e_text)
+            if not isinstance(merged[label_saving_detecting], bool):
+                e_text = f"{label_saving_detecting} должен быть буллевым значением. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
         if not isinstance(merged[label_avg_distance], int):
-            e_text = f"{label_avg_distance} должен быть целым числом."
-            logger.error(e_text)
+            e_text = f"{label_avg_distance} должен быть целым числом. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_avg_distance] = default_config[label_avg_distance]
+            #raise ValueError(e_text)
+            if not isinstance(merged[label_avg_distance], int):
+                e_text = f"{label_avg_distance} должен быть целым числом. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
         if not isinstance(merged[label_wood_coef], (float, int)):
-            e_text = f"{label_wood_coef} должен быть числом."
-            logger.error(e_text)
-            raise ValueError(e_text)
+            e_text = f"{label_wood_coef} должен быть числом. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_wood_coef] = default_config[label_wood_coef]
+            #raise ValueError(e_text)
+            if not isinstance(merged[label_wood_coef], (float, int)):
+                e_text = f"{label_wood_coef} должен быть числом. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
         if not isinstance(merged[label_sign_coef], (float, int)):
-            e_text = f"{label_sign_coef} должен быть числом."
+            e_text = f"{label_sign_coef} должен быть числом. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_sign_coef] = default_config[label_sign_coef]
+            if not isinstance(merged[label_sign_coef], (float, int)):
+                e_text = f"{label_sign_coef} должен быть числом. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
+            #raise ValueError(e_text)
+        if not isinstance(merged[label_length], (float, int)):
+            e_text = f"{label_length} должен быть числом. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_length] = default_config[label_length]
+            if not isinstance(merged[label_length], (float, int)):
+                e_text = f"{label_length} должен быть числом. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
+            #raise ValueError(e_text)
+        if not isinstance(merged[label_wood_model], str):
+            e_text = f"{label_wood_model} должена быть строкой."
             logger.error(e_text)
             raise ValueError(e_text)
-        if not isinstance(merged[label_length], (float, int)):
-            e_text = f"{label_length} должен быть числом."
+        if not isinstance(merged[label_sign_model], str):
+            e_text = f"{label_sign_model} должена быть строкой."
             logger.error(e_text)
             raise ValueError(e_text)
         if merged[label_avg_distance] < 0:
-            e_text = f"{label_avg_distance} должен быть неотрицательным"
-            logger.error(e_text)
-            raise ValueError(e_text)
+            e_text = f"{label_avg_distance} должен быть неотрицательным. Применяется значение по умолчанию."
+            logger.warning(e_text)
+            self.warnings.append(e_text)
+            merged[label_avg_distance] = default_config[label_avg_distance]
+            if merged[label_avg_distance] < 0:
+                e_text = f"{label_avg_distance} должен быть неотрицательным. Ошибка настроек по умолчанию."
+                logger.error(e_text)
+                raise ValueError(e_text)
+            #raise ValueError(e_text)
         if not (0 <= merged[label_wood_coef] <= 1):
             e_text = f"{label_wood_coef} должен находиться в диапазоне [0, 1]"
             logger.error(e_text)

@@ -82,11 +82,11 @@ class Detector:
                 diametrs = self._wood_detecting(full_path)
                 if not distance:
                     if self.config.avg_distance > 0:
-                        info_text = "Не удалось вычислить масштаб, используется среднее значение из конфигурации"
+                        info_text = f"Не удалось вычислить масштаб на изображении {file}, используется среднее значение из конфигурации"
                         logger.warning(info_text)
                         distance = self.config.avg_distance
                     else:
-                        info_text = "Не удалось вычислить масштаб"
+                        info_text = f"Не удалось вычислить масштаб на изображении {file}"
                         logger.warning(info_text)
                         data.append({self.config.name_photo: file, self.config.name_volume: 0,self.config.name_count: 0})
                         continue

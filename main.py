@@ -17,7 +17,6 @@ INPUT_DIR = BASE_DIR / "data" / "input-images"
 OUTPUT_DIR = BASE_DIR / "data" / "output"
 
 def main():
-
     this_time = datetime.now()
     if not os.path.exists(INPUT_DIR):
         os.makedirs(INPUT_DIR)
@@ -84,6 +83,7 @@ def main():
         logger.error(e_text)
         print(e_text)
         return
+    input()
 
 def save_output_data(output_data, this_time):
     # dt = date.today()
